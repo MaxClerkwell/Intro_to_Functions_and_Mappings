@@ -6,7 +6,7 @@ Abbildungen sind ein fundamentales Konzept in Mathematik und Informatik. Sie bes
 ## 2. Definition einer Abbildung
 Eine Abbildung ist eine Vorschrift, die jedem Element einer Menge \( A \) genau ein Element einer Menge \( B \) zuordnet. Formal schreiben wir:
 
-\[ f: A \to B, \quad f(a) = b \]
+![Definition](https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B%2C%20%5Cquad%20f%28a%29%20%3D%20b)
 
 Dabei nennt man:
 - \( A \) die **Definitionsmenge** \( D(f) \)
@@ -17,14 +17,14 @@ Dabei nennt man:
 ### 3.1 Injektivität
 Eine Abbildung \( f: X \to Y \) ist **injektiv**, wenn unterschiedliche Eingaben unterschiedliche Ausgaben liefern:
 
-\[ f(x_1) = f(x_2) \Rightarrow x_1 = x_2 \]
+![Injektivität](https://latex.codecogs.com/png.latex?f%28x_1%29%20%3D%20f%28x_2%29%20%5CRightarrow%20x_1%20%3D%20x_2)
 
 **Anwendung in der Informatik:** Speicheradressierung, bei der jede Adresse genau einem Speicherinhalt entspricht.
 
 ### 3.2 Surjektivität
 Eine Abbildung \( f: X \to Y \) ist **surjektiv**, wenn jeder Wert in \( Y \) von mindestens einem Wert in \( X \) getroffen wird:
 
-\[ \forall y \in Y, \exists x \in X: f(x) = y \]
+![Surjektivität](https://latex.codecogs.com/png.latex?%5Cforall%20y%20%5Cin%20Y%2C%20%5Cexists%20x%20%5Cin%20X%3A%20f%28x%29%20%3D%20y)
 
 **Anwendung in der Informatik:** Rundungsfunktionen, die mehreren Eingabewerten denselben Ausgabewert zuordnen.
 
@@ -36,11 +36,11 @@ Eine Abbildung ist **bijektiv**, wenn sie sowohl injektiv als auch surjektiv ist
 ## 4. Umkehrbarkeit von Abbildungen
 Eine Abbildung \( f: X \to Y \) ist **umkehrbar**, wenn es eine Funktion \( g: Y \to X \) gibt, sodass:
 
-\[ g(f(x)) = x \quad \text{und} \quad f(g(y)) = y \]
+![Umkehrbarkeit](https://latex.codecogs.com/png.latex?g%28f%28x%29%29%20%3D%20x%20%5Cquad%20%5Ctext%7Bund%7D%20%5Cquad%20f%28g%28y%29%29%20%3D%20y)
 
 **Beispiel für eine umkehrbare Funktion:**
 
-\[ f(x) = x - 3, \quad f^{-1}(y) = y + 3 \]
+![Beispiel](https://latex.codecogs.com/png.latex?f%28x%29%20%3D%20x%20-%203%2C%20%5Cquad%20f%5E%7B-1%7D%28y%29%20%3D%20y%20%2B%203)
 
 **Wann ist eine Funktion nicht umkehrbar?**
 - Wenn sie nicht injektiv ist.
@@ -52,7 +52,7 @@ Eine Abbildung \( f: X \to Y \) ist **umkehrbar**, wenn es eine Funktion \( g: Y
 ## 5. Darstellung von Abbildungen
 Abbildungen können auf verschiedene Weise dargestellt werden:
 
-- **Funktionsgleichungen:** \( f(x) = x^2 \)
+- **Funktionsgleichungen:** ![Funktionsgleichung](https://latex.codecogs.com/png.latex?f%28x%29%20%3D%20x%5E2)
 - **Tabellen:** Wertepaare \( (x, f(x)) \)
 - **Graphen:** Visualisierung einer Funktion
 - **Code:** Implementierung als Programm
