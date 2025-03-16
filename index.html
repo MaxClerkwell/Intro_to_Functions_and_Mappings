@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Einführung in Abbildungen</title>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+
+</head>
+
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Einführung in Abbildungen</h1>
+                <p>Einführung in die Programmierung</p>
+                <p>Stephan Bökelmann</p>
+            </section>
+            
+            <section>
+                <section>
+                    <h2>Die Abbildung als mathematisches Objekt</h2>
+                </section>
+                <section>
+                    <p>Abbildungen haben eine wohldefinierte Menge an Eigenschaften</p>
+                    <p>Sie haben eine axiomatisch festgelegte Struktur</p>
+                    <p>Eine Abbildung ist eine eindeutige Zuordnung von Elementen einer Menge zu Elementen einer anderen Menge.</p>
+                </section>
+                <section>
+                    <p>Abbildungen dienen uns als Grundkonzept der Programmierung</p>
+                    <p>Aufgabe früher Computer war es, Rechenmaschine zu sein</p>
+                    <p>Interaktive Programme wie Betriebssysteme und GUIs kamen viel später</p>
+                </section>
+                <section>
+                    <p>Um das Programmieren zu verstehen müssen wir den Computer verstehen</p>
+                    <p>Um den Computer zu verstehen müssen wir Abbildungen verstehen</p>
+                </section>
+                <section>
+                    <h3>Definition</h3>
+                    <blockquote>
+                        Eine <strong>Abbildung</strong> $f$ aus einer Menge $A$ in eine Menge $B$ ist eine Vorschrift, die jedem Element $a$ aus $A$ genau ein Element $b = f(a)$ aus $B$ zuordnet. Dabei nennt man $A=D(f)$ die <strong>Definitionsmenge</strong>, $f(A)$ das <strong>Bild</strong>, und $B=W(f)$ heißt <strong>Wertemenge</strong>.
+                    </blockquote>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h3>Beispiele aus Mathematik und Informatik</h3>
+                </section>
+                <section>
+                    <p><strong>Mathematische Funktionen:</strong></p>
+                    <p>Eine einfache quadratische Funktion:</p>
+                    <pre><code class="math">f(x) = x^2</code></pre>
+                    <p>Eine lineare Funktion:</p>
+                    <pre><code class="math">g(x) = 3x + 2</code></pre>
+                </section>
+                <section>
+                    <p><strong>Beispiel aus der Informatik:</strong></p>
+                    <p>Programme als Abbildungen:</p>
+                    <pre><code class="python">def square(x):
+    return x * x</code></pre>
+                    <p>Hier entspricht die Funktion einer mathematischen Abbildung $f(x) = x^2$.</p>
+                </section>
+                <section>
+                    <p>Programme führen Berechnungen durch, indem sie Eingaben in Ausgaben überführen.</p>
+                    <p>Ein weiteres Beispiel für eine Funktion mit mehreren Eingaben:</p>
+                    <pre><code class="python">def add(a, b):
+    return a + b</code></pre>
+                    <p>Dies entspricht einer Abbildung $h: \mathbb{R}^2 \to \mathbb{R}$ mit $h(a, b) = a + b$.</p>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h2>Programme als Abbildungen</h2>
+                </section>
+                
+                <section>
+                    <p>Programme lassen sich als Abbildungen von Eingaben auf Ausgaben verstehen.</p>
+                    <p>Ein Programm verarbeitet eine Eingabe und gibt eine Ausgabe zurück:</p>
+                    <pre><code class="python">def square(x):
+    return x * x</code></pre>
+                    <p>Diese Funktion beschreibt eine mathematische Abbildung \( f: \mathbb{R} \to \mathbb{R} \) mit \( f(x) = x^2 \).</p>
+                </section>
+                <section>
+                    <p>Programme können auch mehrere Eingaben verarbeiten:</p>
+                    <pre><code class="python">def add(a, b):
+    return a + b</code></pre>
+                    <p>Diese Funktion entspricht der Abbildung \( g: \mathbb{R}^2 \to \mathbb{R} \) mit \( g(a, b) = a + b \).</p>
+                </section>
+                <section>
+                    <p>Einige Programme haben mehrere Ausgaben:</p>
+                    <pre><code class="python">def add_and_multiply(a, b):
+    return a + b, a * b</code></pre>
+                    <p>Hier wird eine Abbildung definiert, die ein Tupel \( (a+b, a*b) \) zurückgibt.</p>
+                </section>
+                <section>
+                    <p>Programme sind oft Kombinationen von Abbildungen:</p>
+                    <pre><code class="python">def f(x):
+    return x + 3
+
+def g(x):
+    return 2 * x
+
+def h(x):
+    return f(g(x))</code></pre>
+                    <p>Hier ist \( h(x) = f(g(x)) \), also \( h(x) = 2x + 3 \).</p>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h2>Mengen</h2>
+                    <h3>Definitionsbereich und Wertebereich</h3>
+                </section>
+                <section>
+                    <h3>Was sind Mengen?</h3>
+                    <p>Eine <strong>Menge</strong> ist eine Sammlung wohldefinierter, unterscheidbarer Objekte.</p>
+                    <p>Beispiele: Zahlenmengen (ℕ, ℤ, ℚ, ℝ), Zeichenmengen, Objekte in einer Datenbank.</p>
+                </section>
+                <section>
+                    <h3>Beispiele für Mengen</h3>
+                    <p>- Die Menge der natürlichen Zahlen: \( \mathbb{N} = \{ 1, 2, 3, ... \} \)</p>
+                    <p>- Die Menge der Buchstaben im Alphabet: {A, B, C, ..., Z}</p>
+                    <p>- Die Menge der gültigen Farben für eine Benutzeroberfläche: {rot, blau, grün}</p>
+                </section>
+                <section>
+                    <h3>Funktionen und Abbildungen</h3>
+                    <p>Eine Funktion $f: X \to Y$ ordnet jedem Element $x \in X $ genau ein Element $y \in Y$ zu.</p>
+                    <p>Beispiel:</p>
+                    <code class="math">$f(x) = x^2, \quad X = \mathbb{R}, \quad Y = \mathbb{R}^+$</code>
+                </section>
+                <section>
+                    <h3>Reale Zahlen auf dem Computer</h3>
+                    <p>Auf Computern sind Zahlen nicht unendlich genau darstellbar.</p>
+                    <p>Begrenzung durch:</p>
+                    <ul>
+                        <li>Binärsystem: Darstellung mit 0 und 1</li>
+                        <li>Speicherbreite: Float-Zahlen haben begrenzte Genauigkeit</li>
+                        <li>Rundungsfehler: \( 0.1 + 0.2 \neq 0.3 \) in vielen Programmiersprachen</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Interpretation einer Computerantwort</h3>
+                    <p>Computerausgaben sind oft codierte Werte:</p>
+                    <ul>
+                        <li>Text als ASCII oder Unicode</li>
+                        <li>Zahlen in Gleitkommadarstellung</li>
+                        <li>Bilder als Pixelwerte in RGB oder CMYK</li>
+                    </ul>
+                    <p>Auch hier gilt: Eine Abbildung von binären Daten auf interpretierbare Werte.</p>
+                </section>
+                <section>
+                    <h2>Eingabe – Verarbeitung – Ausgabe</h2>
+                    <p>Echter Wert wird auf Binärdaten abgebildet - kodiert</p>
+                    <p>Binärwert wird durch Schaltung auf Binärwert abgebildet</p>
+                    <p>Binärwert wird auf Darstellung abgebildet - dekodiert</p>
+                </section>
+                
+                
+            </section>
+            
+            
+            <section>
+                <section>
+                    <h3>Darstellung von Abbildungen</h3>
+                </section>
+                <section>
+                    <h3>Verschiedene Darstellungen</h3>
+                    <p>Abbildungen können auf verschiedene Weise dargestellt werden:</p>
+                    <ul>
+                        <li><strong>Funktionsgleichungen:</strong> $ f(x) = x^2 $</li>
+                        <li><strong>Tabellen:</strong> Wertepaare $(x, f(x))$</li>
+                        <li><strong>Graphen:</strong> Visualisierung einer Funktion</li>
+                        <li><strong>Code:</strong> Implementierung als Programm</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Tabellarische Darstellung</h3>
+                    <table>
+                        <tr>
+                            <th>$x$</th><th>$f(x) = x^2$</th>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td><td>4</td>
+                        </tr>
+                        <tr>
+                            <td>3</td><td>9</td>
+                        </tr>
+                        <tr>
+                            <td>4</td><td>16</td>
+                        </tr>
+                    </table>
+                </section>
+                
+                <section>
+                    <h3>Grafische Darstellung</h3>
+                    <p>Ein Graph stellt eine Funktion visuell dar:</p>
+                    <pre class="mermaid">
+                    graph TD;
+                        A(1) -->|a| B(1);
+                        C(2) -->|b| D(4);
+                        E(3) -->|c| F(9);
+                        G(4) -->|d| H(16);
+                    </pre>
+                </section>
+                
+                <section>
+                    <h3>Darstellung als Code</h3>
+                    <p>Eine Funktion kann als Code implementiert werden:</p>
+                    <pre><code class="python">def square(x):
+    return x * x</code></pre>
+                    <p>Dies entspricht der mathematischen Abbildung $ f(x) = x^2 $.</p>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h3>Eigenschaften von Abbildungen</h3>
+                </section>
+                <section>
+                    <h3>Injektivität</h3>
+                    <p>Eine Abbildung $ f: X \to Y $ heißt <strong>injektiv</strong>, wenn unterschiedliche Eingaben unterschiedliche Ausgaben liefern:</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" version="1.1">
+                        <defs>
+                            <style type="text/css">
+                                .ellipse  { 
+                                    stroke-width: 2.0; 
+                                    stroke: rgb(255, 255, 255); 
+                                    fill: none; 
+                                }
+                                .setlabel, .xelement, .yelement { 
+                                    font-size: 18pt; 
+                                    text-anchor: middle; 
+                                    fill: white; /* Setzt die Schriftfarbe auf Weiß */
+                                }
+                                .map { 
+                                    stroke-width: 1.0; 
+                                    stroke: rgb(255, 255, 255); 
+                                    fill: none; 
+                                    marker-end: url(#arrow); 
+                                }
+                                .arrow { fill: rgb(255, 255, 255); }
+                            </style>
+                            <marker id="arrow" markerWidth="4" markerHeight="8" refX="3" refY="4" orient="auto">
+                                <polyline points="0,0 4,4 0,8" class="arrow"/>
+                            </marker>
+                        </defs>
+                    
+                        <g>
+                            <ellipse cx="50" cy="110" rx="40" ry="80" class="ellipse"/>
+                            <text x="50" y="26" class="setlabel">X</text>
+                            <g class="xelement">
+                                <text x="50" y="60">1</text>
+                                <text x="50" y="95">2</text>
+                                <text x="50" y="130">3</text>
+                            </g>
+                            <ellipse cx="150" cy="110" rx="40" ry="80" class="ellipse"/>
+                            <text x="150" y="26" class="setlabel">Y</text>
+                            <g class="yelement">
+                                <text x="150" y="60">D</text>
+                                <text x="150" y="95">B</text>
+                                <text x="150" y="130">C</text>
+                                <text x="150" y="165">A</text>
+                            </g>
+                            <g class="map">
+                                <line x1="57" y1="53" x2="142" y2="53"/>
+                                <line x1="57" y1="88" x2="142" y2="88"/>
+                                <line x1="57" y1="123" x2="142" y2="158"/>
+                            </g>
+                        </g>
+                    </svg>
+                    
+                </section>
+                <section>
+                    <h3>Injektivität</h3>
+                    <p>$f(x_1) = f(x_2) \Rightarrow x_1 = x_2$</p>
+                </section>
+                
+                <section>
+                    <h3>Surjektivität</h3>
+                    <p>Eine Abbildung $ f: X \to Y $ heißt <strong>surjektiv</strong>, wenn jeder Wert in $ Y $ von mindestens einem $ x \in X $ getroffen wird:</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" version="1.1">
+                        <defs>
+                            <style type="text/css">
+                                .ellipse { stroke-width: 2.0; stroke: white; fill: none; }
+                                .setlabel, .xelement, .yelement { font-size: 14pt; text-anchor: middle; fill: white; }
+                                .map { stroke-width: 1.0; stroke: white; fill: none; marker-end: url(#arrow); }
+                                .arrow { fill: white; }
+                            </style>
+                            <marker id="arrow" markerWidth="4" markerHeight="8" refX="3" refY="4" orient="auto">
+                                <polyline points="0,0 4,4 0,8" class="arrow"/>
+                            </marker>
+                        </defs>
+                        <g>
+                            <ellipse cx="50" cy="110" rx="40" ry="80" class="ellipse"/>
+                            <text x="50" y="26" class="setlabel">X</text>
+                            <g class="xelement">
+                                <text x="50" y="60">1</text>
+                                <text x="50" y="95">2</text>
+                                <text x="50" y="130">3</text>
+                                <text x="50" y="165">4</text>
+                            </g>
+                            <ellipse cx="150" cy="110" rx="40" ry="80" class="ellipse"/>
+                            <text x="150" y="26" class="setlabel">Y</text>
+                            <g class="yelement">
+                                <text x="150" y="60">D</text>
+                                <text x="150" y="95">B</text>
+                                <text x="150" y="130">C</text>
+                            </g>
+                            <g class="map">
+                                <line x1="57" y1="53" x2="142" y2="53"/>
+                                <line x1="57" y1="88" x2="142" y2="88"/>
+                                <line x1="57" y1="123" x2="142" y2="123"/>
+                                <line x1="57" y1="158" x2="142" y2="123"/>
+                            </g>
+                        </g>
+                    </svg>
+                </section>
+                <section>
+                    <h3>Surjektivität</h3>
+                    <p>$\forall y \in Y, \exists x \in X: f(x) = y$</p>
+                </section>
+                
+                <section>
+                    <h3>Bijektivität</h3>
+                    <p>Eine Abbildung ist <strong>bijektiv</strong>, wenn sie sowohl injektiv als auch surjektiv ist:</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" version="1.1">
+                        <g>
+                            <ellipse cx="50" cy="110" rx="40" ry="80" class="ellipse"/>
+                            <text x="50" y="26" class="setlabel">X</text>
+                            <g class="xelement">
+                                <text x="50" y="60">1</text>
+                                <text x="50" y="95">2</text>
+                                <text x="50" y="130">3</text>
+                                <text x="50" y="165">4</text>
+                            </g>
+                            <ellipse cx="150" cy="110" rx="40" ry="80" class="ellipse"/>
+                            <text x="150" y="26" class="setlabel">Y</text>
+                            <g class="yelement">
+                                <text x="150" y="60">D</text>
+                                <text x="150" y="95">B</text>
+                                <text x="150" y="130">C</text>
+                                <text x="150" y="165">A</text>
+                            </g>
+                            <g class="map">
+                                <line x1="57" y1="53" x2="142" y2="53"/>
+                                <line x1="57" y1="88" x2="142" y2="88"/>
+                                <line x1="57" y1="123" x2="142" y2="123"/>
+                                <line x1="57" y1="158" x2="142" y2="158"/>
+                            </g>
+                        </g>
+                    </svg>
+                </section>
+                <section>
+                    <h3>Bijektivität</h3>
+                    <p>$\forall y \in Y, \exists! x \in X: f(x) = y$</p>
+                </section>
+
+                <section>
+                    <h3>Anwendung dieser Eigenschaften in der Informatik</h3>
+                    <p>Injektivität notwendig für Speicheradressierung </p>
+                    <p>Surjektivität zentral für Rundungen</p>
+                    <p>Bijektivität essentiell für Kodierungen</p>
+                </section>
+                
+                <section>
+                    <h3>Umkehrbarkeit von Abbildungen</h3>
+                    <p>Eine Abbildung $ f: X \to Y $ ist <strong>umkehrbar</strong>, wenn es eine Funktion $ g: Y \to X $ gibt, sodass:</p>
+                    $g(f(x)) = x \quad \text{und} \quad f(g(y)) = y$
+                    <p>Beispiel für eine umkehrbare Funktion:</p>
+                    $f(x) = x - 3, \quad f^{-1}(y) = y + 3$
+                </section>
+                
+                <section>
+                    <h3>Umkehrbarkeit von Abbildungen</h3>
+                    <p>Jede Bijektivität Abbildung ist umkehrbar</p>
+                    <p>Nicht jede umkehrbare Abbildung ist bijektiv</p>
+                </section>
+
+                <section>
+                    <h3>Wann ist eine Funktion nicht umkehrbar?</h3>
+                    <p>Eine Funktion ist nicht umkehrbar, wenn sie nicht injektiv ist.</p>
+                    <p>Beispiel:</p>
+                    $f(x) = x^2$
+                    <p>Da $ f(-2) = f(2) = 4 $, existiert keine eindeutige Umkehrfunktion.</p>
+                </section>
+
+                <section>
+                    <h3>Nützlichkeit der Unumkehrbarkeit</h3>
+                    <p>Einwegfunktionen bilden die Grundlage der <strong>asymmetrischen Verschlüsselung</strong></p>
+                </section>
+            </section>
+                            
+            <section>
+                <h3>Take Home</h3>
+                <ul>
+                    <li>Abbildungen sind fundamental für die Programmierung</li>
+                    <li>Wir bilden von einer Definitions auf einer Wertemenge ab</li>
+                    <li>Abbildungen können sich in ihren Eigenschaften unterscheiden</li>
+                    <ul>
+                        <li>(Un)umkehrbar</li>
+                        <li>Linkseindeutig</li>
+                        <li>Rechtseindeutig</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Weiterführende Links</h3>
+                <ul>
+                    <li><a href="https://de.wikipedia.org/wiki/Abbildung_(Mathematik)" target="_blank">Wikipedia: Abbildung (Mathematik)</a></li>
+                    <li><a href="https://mathworld.wolfram.com/Function.html" target="_blank">MathWorld: Function</a></li>
+                    <li><a href="https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:functions" target="_blank">Khan Academy: Functions</a></li>
+                    <li><a href="https://cs.stackexchange.com/questions/17105/why-do-we-use-injective-surjective-and-bijective-functions-in-computer-science" target="_blank">StackExchange: Anwendungen in der Informatik</a></li>
+                    <li><a href="https://ocw.mit.edu/courses/mathematics/18-01-single-variable-calculus-fall-2006/" target="_blank">MIT OpenCourseWare: Single Variable Calculus</a></li>
+                    <li><a href="https://link.springer.com/book/10.1007/978-3-662-64389-1" target="_blank">Arents: Mathematik - Kapitel 1</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <script>
+        
+        Reveal.initialize({
+            plugins: [ RevealMath.MathJax3 ]
+        });
+    </script>
+</body>
+</html>
+
